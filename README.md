@@ -4,47 +4,86 @@ Welcome to the SICSS Web Scraping Workshop! In this exercise, you'll learn how t
 
 ## Prerequisites
 
-Before you begin, make sure you have:
-- Python 3.10 or newer installed
-- Google Chrome browser installed
-- Git installed (to clone the repository)
+### 1. Install Python 3.10 or Newer
 
-## Getting Started
+You'll need Python installed to run the web scraping script.
 
-1. **Clone this repository**
+#### macOS
+
+##### Option A — Direct from Python.org
+
+1. Download the latest Python from [python.org/downloads/macos/](https://www.python.org/downloads/macos/)
+2. Run the installer with default settings
+3. Verify installation in Terminal:
    ```bash
-   git clone https://github.com/yourusername/sicss-web-scraping.git
-   cd sicss-web-scraping
+   python3 --version
+   ```
+   Should show: `Python 3.x.x`
+
+##### Option B — Using Homebrew
+   ```bash
+brew install python
+python3 --version
+```
+
+#### Windows
+
+1. Download Python from [python.org/downloads/windows/](https://www.python.org/downloads/windows/)
+2. **IMPORTANT**: Check "Add Python to PATH" during installation
+3. Verify in Command Prompt:
+   ```cmd
+   python --version
    ```
 
-2. **Set up the virtual environment**
-   ```bash
-   # On macOS/Linux
-   python3 -m venv venv
-   source venv/bin/activate
-   
-   # On Windows
-   # python -m venv venv
-   # venv\Scripts\activate
+   You should see:
+
+   ```
+   Python 3.12.5
    ```
 
-3. **Install the required packages**
-   ```bash
-   pip install -r requirements.txt
-   ```
-   
-   This will automatically install:
-   - Selenium for web automation
-   - WebDriver Manager for handling ChromeDriver
-   - Pandas for data manipulation
-   - BeautifulSoup for HTML parsing
+   If you get an error like “python is not recognized,” the PATH step was missed — reinstall and make sure **Add Python to PATH** is checked.
 
-4. **Run the example script**
+
+### Linux (Debian/Ubuntu)
+
    ```bash
-   python scrape.py
-   ```
-   
-   The script will prompt you to enter a search query and then display the top search results from Google.
+sudo apt update
+sudo apt install -y python3 python3-venv python3-pip
+python3 --version
+```
+
+You should see something like:
+
+```
+Python 3.12.5
+```
+
+## 2) Create a Project Folder
+
+We’ll keep all files for this project in one place.
+
+```bash
+mkdir selenium-scraping
+cd selenium-scraping
+```
+
+---
+
+## 3) Create & Activate a Virtual Environment
+
+A **virtual environment** keeps the project’s packages separate from the rest of your computer.
+
+```bash
+python3 -m venv .venv
+```
+
+### Activate the virtual environment:
+
+* **macOS / Linux**
+
+  ```bash
+  source .venv/bin/activate
+  ```
 
   Your prompt should now show `(.venv)` at the start.
 
